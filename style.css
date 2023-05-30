@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
+);
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+
+
+:root {
+    --MainColor: #00ffc3;
+    --SecColor: #ededed;
+    --LogoColor: #1e2d40;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .content {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .content {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .content {
+        width: 1170px;
+    }
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background-color: #24252a;
+    font-family: "Montserrat", sans-serif;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 60px);
+    background: #24252a;
+    padding: 20px 60px;
+    z-index: 100;
+}
+
+
+.logo img{
+    width: 80px;
+    height: 64px;
+    border-radius: 25%;
+    box-shadow: 0px 0px 6px var(--MainColor);
+    animation: light 1s 0.5s alternate infinite;
+}
+
+@keyframes light {
+    from{
+        box-shadow: 0px 0px 8px var(--MainColor);
+    }
+
+    to{
+        box-shadow: 0px 0px 10px var(--MainColor);
+    }
+}
+
+.navbar{
+    margin-right: 60px;
+}
+
+.navbar a {
+    font-size: 20px;
+    color: var(--SecColor);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 30px;
+    transition: 0.4s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--MainColor);
+    border-bottom: 2px var(--MainColor) solid;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0px 5%;
+}
+
+.content{
+    max-width: 600px;
+}
+
+.content h1{
+    font-size: 50px;
+    font-weight: 800;
+    margin: 0 0 0px;
+    color: var(--SecColor);
+}
+
+@media (max-width: 936px) {
+    .content h1{
+        font-size: 35px;
+    }
+    .parent{
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 767px) {
+    .content h1{
+        font-size: 25px;
+    }
+    .cube{
+        display: none;
+    }
+
+}
+
+@media (max-width: 744px) {
+    .navbar{
+        display: none;
+    }
+    .header{
+        padding: 20px 0px;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+
+.content h3{
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0px;
+    color: var(--MainColor);
+    margin-bottom: 25px;
+    border-right: 2px solid var(--MainColor);
+    width: 0px;
+    white-space: nowrap;
+    animation: Keyboard 3s steps(18) both, border-right 0.5s alternate infinite;
+    overflow: hidden;
+}
+
+@keyframes Keyboard {
+
+    45%{
+    width: 0px;
+    }
+
+    to{
+    width: 306px;
+    }
+}
+
+
+@keyframes border-right {
+
+    0%{
+    border-right-color: var(--MainColor);
+    }
+
+    100%{
+    border-right-color: transparent;
+    }
+}
+
+
+
+.content p{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--SecColor);
+    margin: 0 0 40px;
+}
+
+.content .btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.content .btn-box a{
+    position: relative;
+    font-size: 14px;
+    width: 150px;
+    height: 100%;
+    background: var(--LogoColor);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--SecColor);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    border: 2px solid var(--MainColor);
+    z-index: 1;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.content .btn-box a i{
+    position: absolute;
+    left: 0px;                          /* animated icon */
+    font-size: 20px;
+}
+
+.content .btn-box a:hover{
+    color: var(--LogoColor);
+}
+
+.content .btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--MainColor);
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.content .btn-box a:hover::before{
+    width: 100%;
+}
+
+.home .ico{
+    position: absolute;
+    bottom: 40px;
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home .ico a{
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--MainColor);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--MainColor);
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.home .ico a:hover{
+    color: var(--LogoColor);
+}
+
+.home .ico a::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: var(--MainColor);
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.home .ico a:hover::before{
+    width: 100%;
+}
+
+
+.parent{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: -12;
+    padding-right: 10px;
+    animation: Opac 5s;
+}
+
+@keyframes Opac {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+
+}
+
+.cube{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: cube 80s linear infinite;
+
+
+}
+
+@keyframes cube {
+    0%{
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+}
+
+.box-light{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.box-light span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(var(--LogoColor), var(--MainColor));
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+
+.box-top{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    background-color: var(--LogoColor);
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.box-footer{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    background-color: var(--MainColor);
+    transform: rotateX(90deg) translateZ(-300px);
+    filter: blur(70px);
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    z-index: -11;
+}
